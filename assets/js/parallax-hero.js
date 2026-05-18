@@ -3,8 +3,8 @@ jQuery(document).ready(function($){
 	var	halfWindowH = $(window).height()*0.5,
 		halfWindowW = $(window).width()*0.5,
 		//define a max rotation value (X and Y axises)
-		maxRotationY = 5,
-		maxRotationX = 3,
+		maxRotationY = 3,
+		maxRotationX = 1.8,
 		aspectRatio;
 
 	//detect if hero <img> has been loaded and evaluate its aspect-ratio
