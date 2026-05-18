@@ -19,7 +19,7 @@
     font-family: 'Lilita One', sans-serif;
     font-size: 10rem;
     letter-spacing: 0.01em;
-    color: #FFFFFF !important;
+    color: #FFEAD1 !important;
     text-decoration: none;
     display: inline-block;
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), letter-spacing 0.3s ease;
@@ -28,7 +28,24 @@
 .brand a.flufft-wordmark:hover {
     transform: scale(1.08);
     letter-spacing: 0.08em;
-    color: #FFFFFF !important;
+    color: #FFEAD1 !important;
+}
+
+/* Buttons */
+#content .btn {
+    color: #FFEAD1 !important;
+    border-color: #FFEAD1 !important;
+}
+
+#content .btn-default {
+    background-color: #FFEAD1 !important;
+    color: #FF6B00 !important;
+}
+
+#content .btn-border {
+    background-color: transparent !important;
+    color: #FFEAD1 !important;
+    border-color: #FFEAD1 !important;
 }
 
 .brand {
@@ -53,6 +70,57 @@
 /* Background */
 .cd-background-wrapper {
     background-color: #FF6B00;
+}
+
+/* Side panel overlay color */
+#page:after,
+body.show-panel #page:after,
+body.has-loading-screen #page:after,
+html.has-loading-screen #page:after {
+    background-color: #FFEAD1 !important;
+}
+
+/* Side panel accent color */
+.side-panel {
+    background-color: #FFFFDF !important;
+}
+
+/* Side panel text size */
+.side-panel p {
+    font-size: 1.05rem !important;
+}
+
+.side-panel h4 {
+    font-size: 1.1rem !important;
+}
+
+/* Fix gallery image grid alignment */
+.side-panel .gallery .image {
+    margin-bottom: 1.5rem;
+}
+
+.side-panel .gallery .bg-transfer {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.side-panel .gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+body.side-panel-light .side-panel h1,
+body.side-panel-light .side-panel h2,
+body.side-panel-light .side-panel h3,
+body.side-panel-light .side-panel h4,
+body.side-panel-light .side-panel p {
+    color: #1a1a1a !important;
+}
+
+body.side-panel-light .side-panel section:first-of-type h2 {
+    color: #FD6F2F !important;
 }
 
 /* Vignette overlay */
