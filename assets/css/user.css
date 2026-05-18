@@ -72,11 +72,15 @@
     background-color: #FF6B00;
 }
 
-/* Side panel overlay color */
-#page:after,
-body.show-panel #page:after,
+/* Loading screen overlay */
 body.has-loading-screen #page:after,
 html.has-loading-screen #page:after {
+    background-color: #C04B00 !important;
+}
+
+/* Side panel overlay color */
+#page:after,
+body.show-panel #page:after {
     background-color: #FFEAD1 !important;
 }
 
