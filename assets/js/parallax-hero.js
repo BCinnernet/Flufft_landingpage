@@ -27,13 +27,13 @@ jQuery(document).ready(function($){
 			}
 		});
 
-		// touch support for mobile
+		// touch support for mobile (more dramatic)
 		$(this).on('touchmove', function(event){
 			var touch = event.originalEvent.touches[0];
 			var wrapperOffsetTop = $(this).offset().top;
 			if( $('html').hasClass('preserve-3d') ) {
 				window.requestAnimationFrame(function(){
-					moveBackground(touch, wrapperOffsetTop);
+					moveBackground(touch, wrapperOffsetTop, 2.5);
 				});
 			}
 		});
@@ -73,15 +73,18 @@ jQuery(document).ready(function($){
 		});
 	}
 
-	function moveBackground(event, topOffset) {
-		var rotateY = ((-event.pageX+halfWindowW)/halfWindowW)*maxRotationY,
+	function moveBackground(event, topOffset, multiplier) {
+		var factor = multiplier || 1;
+		var rotateY = ((-event.pageX+halfWindowW)/halfWindowW)*maxRotationY*factor,
 			yPosition = event.pageY - topOffset,
-			rotateX = ((yPosition-halfWindowH)/halfWindowH)*maxRotationX;
+			rotateX = ((yPosition-halfWindowH)/halfWindowH)*maxRotationX*factor;
 
-		if( rotateY > maxRotationY) rotateY = maxRotationY;
-		if( rotateY < -maxRotationY ) rotateY = -maxRotationY;
-		if( rotateX > maxRotationX) rotateX = maxRotationX;
-		if( rotateX < -maxRotationX ) rotateX = -maxRotationX;
+		var clampY = maxRotationY * factor;
+		var clampX = maxRotationX * factor;
+		if( rotateY > clampY) rotateY = clampY;
+		if( rotateY < -clampY ) rotateY = -clampY;
+		if( rotateX > clampX) rotateX = clampX;
+		if( rotateX < -clampX ) rotateX = -clampX;
 
 		$('.cd-floating-background').css({
 			'-moz-transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
