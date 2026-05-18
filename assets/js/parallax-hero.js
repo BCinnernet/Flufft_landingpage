@@ -26,6 +26,17 @@ jQuery(document).ready(function($){
 				});
 			}
 		});
+
+		// touch support for mobile
+		$(this).on('touchmove', function(event){
+			var touch = event.originalEvent.touches[0];
+			var wrapperOffsetTop = $(this).offset().top;
+			if( $('html').hasClass('preserve-3d') ) {
+				window.requestAnimationFrame(function(){
+					moveBackground(touch, wrapperOffsetTop);
+				});
+			}
+		});
 	});
 
 	//on resize - adjust .cd-background-wrapper and .cd-floating-background dimentions and position

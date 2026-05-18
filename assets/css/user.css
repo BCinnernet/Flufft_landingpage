@@ -68,6 +68,24 @@
     background: radial-gradient(ellipse at center, transparent 40%, rgba(180, 60, 0, 0.55) 80%, rgba(120, 30, 0, 0.85) 100%);
 }
 
+/* Mobile responsive */
+@media (max-width: 767px) {
+    .brand a.flufft-wordmark,
+    .brand a.flufft-wordmark:visited {
+        font-size: 4.5rem;
+    }
+
+    .heading p {
+        max-width: 100%;
+        font-size: 0.95rem;
+    }
+
+    .flufft-copyright {
+        font-size: 0.65rem;
+        bottom: 1rem;
+    }
+}
+
 /* Subtle blur across all layers */
 .cd-floating-background .layer {
     filter: blur(1px);
